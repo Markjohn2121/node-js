@@ -9,18 +9,8 @@ module.exports = async(username, password) => {
             `AND ` +
             `userpassword = ` + `'${password}'`
 
-        await connection(query, (error, results) => {
-
-            if (results.length > 0) {
-                return true;
-            } else {
-                return false;
-            }
-
-
-
-        });
-
+     const confirm  = await connection(query);
+       return confirm;  
 
     } catch (error) {
         console.log("cacth false");
